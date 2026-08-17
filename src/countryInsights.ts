@@ -241,6 +241,120 @@ export const COUNTRY_INSIGHTS: { [countryEn: string]: CountryInsight } = {
         text: "Warm but soft context. Indian colleagues may agree ('Yes, sir') to preserve a pleasant atmosphere, even if constraints make delivery impossible."
       }
     ]
+  },
+  "Malaysia": {
+    executiveSummaryZh: "综上所述，马来西亚职场呈现典型的多元文化共生特征，兼具高语境含蓄与深厚的层级尊重。下属极其注重维护上级与同侪的‘面子（Muka）’，避免任何公开冲突。出海管理者应建立温暖的人际信任，多在非正式场合进行一对一沟通以获取真实进展。",
+    executiveSummaryEn: "In summary, Malaysian workplace culture features multicultural synergy with high-context nuance and strong hierarchical deference. Preserving mutual 'Face' (Muka) and avoiding public friction are paramount. Outbound managers should build personal relationships and use 1-on-1 informal check-ins to uncover actual project status.",
+    highlightsZh: [
+      {
+        dimensionId: "disagreeing",
+        title: "极力回避公开冲突与对抗",
+        text: "极重面子与群体和谐。在公开会议中直白质疑同事或上级被视为极其严重的冒犯，会引发强烈的防御退缩。"
+      },
+      {
+        dimensionId: "leading",
+        title: "尊重长辈与职务层级",
+        text: "组织权力阶梯明显，对领导具有高度尊重与服从倾向。高管需要给出明确的方向与授权边界。"
+      },
+      {
+        dimensionId: "evaluating",
+        title: "极其含蓄间接的反馈方式",
+        text: "负面评价多通过修饰语和私下委婉暗示传达，管理者切勿将国内粗暴直接的绩效批评直接照搬。"
+      }
+    ],
+    highlightsEn: [
+      {
+        dimensionId: "disagreeing",
+        title: "Strict Harmony & Face Protection",
+        text: "Public debate is strongly discouraged. Openly contradicting colleagues destroys mutual rapport and triggers passive resistance."
+      },
+      {
+        dimensionId: "leading",
+        title: "Clear Hierarchical Deference",
+        text: "Respect for seniority and management authority is foundational. Clear top-down guidance is expected from senior leaders."
+      },
+      {
+        dimensionId: "evaluating",
+        title: "Gentle, Indirect Feedback",
+        text: "Constructive feedback must be cushioned with positives and delivered privately in diplomatic language."
+      }
+    ]
+  },
+  "Jordan": {
+    executiveSummaryZh: "综上所述，约旦作为中东阿拉伯世界的服务与多语人才枢纽，深受传统人情信任与家族式组织文化影响。商业决策与合作推进极度依赖私交与‘面子’，时间安排偏向柔性弹性。中企出海高管应重礼节、修私交，尊重当地宗教与社会风俗。",
+    executiveSummaryEn: "In summary, Jordan serves as the bilingual talent and service hub of the Levant. Corporate dynamics are shaped by personal rapport and relationship-centric trust. Decision-making relies heavily on mutual respect and face, while time is perceived flexibly. Outbound executives must prioritize relationship-building and respect local norms.",
+    highlightsZh: [
+      {
+        dimensionId: "trusting",
+        title: "强关系纽带与人情账户",
+        text: "信任源于长期的个人互动与家庭式亲近感。没有前期的喝茶叙旧与私交铺垫，冷冰冰的商业条款很难落地。"
+      },
+      {
+        dimensionId: "scheduling",
+        title: "高度柔性的弹性时间观",
+        text: "时间观念具有强烈的流动性（Inshallah 文化），人际关系的紧急度往往优先于机械的日程表死线。"
+      },
+      {
+        dimensionId: "leading",
+        title: "家长式层级尊严",
+        text: "领导者不仅是业务主管，更是关照下属的家长角色。决策自上而下，指令下达需要兼顾尊严与权威。"
+      }
+    ],
+    highlightsEn: [
+      {
+        dimensionId: "trusting",
+        title: "Warm Relational Trust",
+        text: "Business is deeply personal. Trust is cemented over tea and sustained personal hospitality before contractual deals move."
+      },
+      {
+        dimensionId: "scheduling",
+        title: "Flexible Time Horizon",
+        text: "Deadlines are fluid and human connections frequently take precedence over rigid calendar appointments."
+      },
+      {
+        dimensionId: "leading",
+        title: "Paternalistic Hierarchy",
+        text: "Leaders are viewed as paternal figures carrying authority. Clear direction combined with personal care is expected."
+      }
+    ]
+  },
+  "Peru": {
+    executiveSummaryZh: "综上所述，秘鲁职场兼具拉美式热情与深厚的天主教传统秩序。组织注重层级与人情纽带（Personalismo），决策自上而下，极其反感生硬冷漠的工作作风。中企管理者在推进采矿、基建与出海业务时，需倾注时间融入当地圈子，以柔克刚。",
+    executiveSummaryEn: "In summary, Peruvian business culture combines Latin American warmth with traditional hierarchical respect (Personalismo). Top-down leadership and close interpersonal bonds dominate the workplace. Outbound leaders in mining, infrastructure, and commerce must invest heavily in face-to-face social rapport.",
+    highlightsZh: [
+      {
+        dimensionId: "trusting",
+        title: "人格化信任 (Personalismo)",
+        text: "信任先于业务。当地人是与‘具体的某个人’合作，而非仅仅与‘企业法人’合作。高管更替往往需要重新建立人情信任。"
+      },
+      {
+        dimensionId: "scheduling",
+        title: "多向度弹性时间管理",
+        text: "会议与交付节点受到人情变数影响较大，催促进度时应当采取温和而高频的面对面沟通。"
+      },
+      {
+        dimensionId: "leading",
+        title: "层级权威与自上而下决策",
+        text: "高层决策权集中，基层习惯服从指令并规避跨层级冲突。高管需给予明确指引与关怀。"
+      }
+    ],
+    highlightsEn: [
+      {
+        dimensionId: "trusting",
+        title: "Personalismo Trust Dynamic",
+        text: "Trust is pledged to individual persons, not abstract corporate logos. Personal rapport precedes business commitments."
+      },
+      {
+        dimensionId: "scheduling",
+        title: "Fluid Polychronic Time",
+        text: "Agendas and timelines shift dynamically based on interpersonal situations. Gentle in-person follow-ups are best."
+      },
+      {
+        dimensionId: "leading",
+        title: "Centralized Authority",
+        text: "Decisions flow firmly from the top. Subordinates expect decisive leadership combined with empathetic interpersonal manners."
+      }
+    ]
   }
 };
 

@@ -183,7 +183,7 @@ export const COUNTRIES: CountryData[] = [
       leading: 6.5,
       deciding: 8.0,
       trusting: 6.8,
-      disagreeing: 1.5,
+      disagreeing: 1.2,
       scheduling: 5.0
     }
   },
@@ -337,7 +337,7 @@ export const COUNTRIES: CountryData[] = [
       leading: 8.4,
       deciding: 8.5,
       trusting: 7.2,
-      disagreeing: 1.5,
+      disagreeing: 1.8,
       scheduling: 6.4
     }
   },
@@ -549,6 +549,48 @@ export const COUNTRIES: CountryData[] = [
       trusting: 8.5,
       disagreeing: 5.5,
       scheduling: 8.5
+    }
+  },
+  {
+    nameZh: "马来西亚",
+    nameEn: "Malaysia",
+    scores: {
+      communicating: 8.2,
+      evaluating: 8.5,
+      persuading: 5.0,
+      leading: 8.8,
+      deciding: 8.3,
+      trusting: 8.5,
+      disagreeing: 8.5,
+      scheduling: 8.0
+    }
+  },
+  {
+    nameZh: "约旦",
+    nameEn: "Jordan",
+    scores: {
+      communicating: 8.2,
+      evaluating: 7.5,
+      persuading: 5.0,
+      leading: 8.8,
+      deciding: 8.3,
+      trusting: 8.5,
+      disagreeing: 8.0,
+      scheduling: 8.5
+    }
+  },
+  {
+    nameZh: "秘鲁",
+    nameEn: "Peru",
+    scores: {
+      communicating: 8.5,
+      evaluating: 7.8,
+      persuading: 4.5,
+      leading: 8.5,
+      deciding: 8.2,
+      trusting: 8.8,
+      disagreeing: 8.2,
+      scheduling: 8.8
     }
   }
 ];

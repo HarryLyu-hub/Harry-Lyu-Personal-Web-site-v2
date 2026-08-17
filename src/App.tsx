@@ -99,7 +99,10 @@ const COUNTRY_COLORS: { [key: string]: { border: string; bg: string; text: strin
   "Poland": { border: "border-rose-700", bg: "bg-rose-700/10", text: "text-rose-800", dot: "bg-rose-700", line: "#be123c" },
   "Hong Kong (China)": { border: "border-red-600", bg: "bg-red-600/10", text: "text-red-700", dot: "bg-red-600", line: "#dc2626" },
   "Australia": { border: "border-yellow-500", bg: "bg-yellow-500/10", text: "text-yellow-600", dot: "bg-yellow-500", line: "#eab308" },
-  "Nigeria": { border: "border-green-700", bg: "bg-green-700/10", text: "text-green-800", dot: "bg-green-700", line: "#15803d" }
+  "Nigeria": { border: "border-green-700", bg: "bg-green-700/10", text: "text-green-800", dot: "bg-green-700", line: "#15803d" },
+  "Malaysia": { border: "border-amber-500", bg: "bg-amber-500/10", text: "text-amber-600", dot: "bg-amber-500", line: "#f59e0b" },
+  "Jordan": { border: "border-yellow-600", bg: "bg-yellow-600/10", text: "text-yellow-700", dot: "bg-yellow-600", line: "#ca8a04" },
+  "Peru": { border: "border-emerald-600", bg: "bg-emerald-600/10", text: "text-emerald-700", dot: "bg-emerald-600", line: "#059669" }
 };
 
 interface MemoryItem {
