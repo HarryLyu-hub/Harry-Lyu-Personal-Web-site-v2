@@ -1,0 +1,19 @@
+{
+  "collections": {
+    "students": {
+      "fields": {
+        "email": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "org": { "type": "string", "required": true },
+        "phone": { "type": "string", "required": true },
+        "role": { "type": "string", "required": true },
+        "selectedPlan": { "type": "string", "required": false },
+        "status": { "type": "string", "required": true },
+        "expiryDate": { "type": "number", "required": false },
+        "createdAt": { "type": "number", "required": true },
+        "password": { "type": "string", "required": false }
+      },
+      "indexes": []
+    }
+  }
+}

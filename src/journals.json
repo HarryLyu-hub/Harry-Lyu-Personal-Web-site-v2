@@ -1,0 +1,67 @@
+[
+  {
+    "id": "journal-1",
+    "title": "《客户观察》特约首发：《中企客服系统出海与数据合规》",
+    "titleEn": "Featured: Outbound Customer Service Systems & Data Compliance",
+    "journal": "《客户观察》 (Customer Observation)",
+    "date": "2024.11",
+    "image": "/src/assets/images/keynote_singapore_1781853262378.jpg",
+    "link": "https://kehuguancha.yunzhan365.com/books/msbm/mobile/index.html#p=82",
+    "desc": "系统梳理了出海面临的欧盟GDPR、印度DPDP 2023、印尼APPI等全球最严数据安全红线。深入解析了跨国客服体系中DPO（数据保护官）设置、远程办公水印监控（防止拍照/泄密）、极小化数据存储设计，以及如何选用具备高合规水准的BPO服务商进行无边界信息处理限制。本篇权威报告特别参照了“ASFP - Full Presentation_4.pdf”中关于客服管理与“OIT-999-0040-21-01 (1)_4.pdf”中关口安全要求对齐的最佳构想。",
+    "takeaway": "数据合规并非出海的阻碍，而是在海外安全高效可持续运营的顶级“护身符”；精准管控DPO角色并实现数据脱敏，方能游刃有余。",
+    "badge": "特约首发",
+    "isCustom": false
+  },
+  {
+    "id": "journal-2",
+    "title": "《客户观察》专栏首发：《一线声波传商韵，万般客意化金流——论用户体验团队如何帮助企业把握流量与高质转化》",
+    "titleEn": "Column: Driving Conversions via Soundwave Customer Experience",
+    "journal": "《客户观察》 (Customer Observation)",
+    "date": "2024.09",
+    "image": "/src/assets/images/keynote_indonesia_1781853281712.jpg",
+    "link": "https://kehuguancha.yunzhan365.com/books/gvhn/mobile/index.html?maxwidthtosmallmode=0&maxheighttosmallmode=0#p=49",
+    "desc": "深入探讨了“用户体验”团队绝非成本负担，而是在出海高复杂度合规与流量变现交汇点上的核心纽带。文章详细解构了如何以专业沟通与温度服务将流量高效转化为销量增长。文章特别剖析了公域流量漏斗与私域流量池的结合实践，由副主编吕华先生亲笔撰写。报告部分灵感并技术对齐参考了“A220-ANSP-V15-2019-11_4.pdf”安全指标对齐机制。",
+    "takeaway": "良好的用户体验和合规经营驱动流量增长，是跨国成长四大互撑支柱（品牌、流量、合规、体验）融合作用的必然结果。体验是底盘，更是私域复购的硬船桨。",
+    "badge": "专栏推荐",
+    "isCustom": false
+  },
+  {
+    "id": "journal-3",
+    "title": "《客户观察》特约专题：《扬帆寻渡千帆竞，四海同心万里行——境外客服中心选址、自建与BPO伙伴的合规甄选指南》",
+    "titleEn": "Special Feature: Overseas Contact Center Site Selection & Compliance BPO Guide",
+    "journal": "《客户观察》 (Customer Observation)",
+    "date": "2024.07",
+    "image": "/src/assets/images/keynote_crossborder_1781853295706.jpg",
+    "link": "https://www.caibocn.com/newsinfo/8411379.html",
+    "desc": "全景概述了全球呼叫中心1500万从业者格局、国内外自建与BPO运营成本及各重点离岸港口（如波兰、罗马尼亚、匈牙利东欧铁三角，以及性价比之王埃及和美语专家菲律宾达沃等地）的优劣势雷达图。深度剖析了跨国呼叫中心在工作时限、时区匹配、语言覆盖、以及遵守GDPR与PDPL等关键数据合规挑战。本白皮书设计对齐与标准甄选参考了“A350_Security-Handbook_Issue_7.1_VxxD11040869_4.pdf”及“SA_LR_Security-Handbook_Issue2_20210630_4.pdf”，确保高水准安全和体系化支持。",
+    "takeaway": "境外BPO考察切忌走马观花，亲自面试DPO，并对比其与公司类似同行的承接案例方是大企业规避数百万罚款并稳定员工流失的关键。",
+    "badge": "重磅专题",
+    "isCustom": false
+  },
+  {
+    "id": "journal-4",
+    "title": "《客户体验中心出海的技术规划 | 出海专栏》",
+    "titleEn": "Technical Planning of Outbound Customer Experience Center | Outbound Column",
+    "journal": "《客户观察》 (Customer Observation)",
+    "date": "2025.01",
+    "image": "/src/assets/images/outbound_road_bridge_1781665312853.jpg",
+    "link": "https://www.caibocn.com/newsinfo/8719753.html",
+    "desc": "出海客户体验中心技术规划的深度实战拆解，涵盖全渠道数字交互网络拓扑、低延迟高保真国际专线话务路由、以及如何在高并发与异构基础设施下实现动态弹性的容量调度。文章为出海企业提供了随行即用的多国家跨地域网络建设避雷指南与安全高可用指标建议，全方位指导出海技术选型。",
+    "takeaway": "技术规划是出海体验落地的钢筋骨架，只有把全渠道数字网络、话务路由以及多国家高可用底层完全打通，服务质量才有高容错的保证。",
+    "badge": "技术规划",
+    "isCustom": false
+  },
+  {
+    "id": "journal-5",
+    "title": "《熊猫与战狼》",
+    "titleEn": "Pandas and Wolves: Cultural Management Perspectives",
+    "journal": "《客户观察》 (Customer Observation)",
+    "date": "2025.09",
+    "image": "/src/assets/images/outbound_bridge_1781772014439.jpg",
+    "link": "http://www.ccinchina.com/article/articleDetail?articleid=202509010532360736",
+    "desc": "基于跨文化管理视角的经典深度评述。探讨中企出海在面对极其复杂的海外地缘、宗教信仰、跨文化劳工法规冲突时，如何从“战狼式”高强度、硬控制的家长制管辖，智慧过渡到如“大熊猫”般具备高包容度、温和而具韧性的本地化融合式管理，真正做到入乡随俗、包容多边。",
+    "takeaway": "跨文化组织建设需要将刚性的制度流程与柔性的本地包容有机融会。做硬朗的开拓者，更要做温和而有智慧的跨文化融通人。",
+    "badge": "文化管理",
+    "isCustom": false
+  }
+]

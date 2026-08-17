@@ -1,0 +1,8 @@
+{
+  "name": "吕华个人网站",
+  "description": "基于经典文化地图维度的跨文化管理与案例分析工具。支持交互式国家文化地图对比，并由 Gemini AI 驱动真实案例碰撞冲突深度分析与行动指南。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

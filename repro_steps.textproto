@@ -1,0 +1,11 @@
+edition = "2023";
+
+package learning.gemini.g4g.evaluation;
+
+steps {
+  description: "Update the six-step navigator headers to perfectly align with the printed book's TOC, integrate celebrity book reviews from friends, and simplify the signed pre-order modal to cleanly present the original flyer image in full without extra decoration."
+  requested_information {
+    key: "xid"
+    value: "264765709"
+  }
+}

@@ -1,0 +1,64 @@
+# GitHub Actions 自动化部署流水线 (CI/CD)
+# 作用：当 main 分支有代码更新时，自动进行打包，并将打包后的产物安全同步至腾讯云国内服务器并重启服务。
+
+name: Deploy to Tencent Cloud
+
+on:
+  push:
+    branches:
+      - main # 仅在 main 分支发生代码推送时触发
+  workflow_dispatch: # 允许在 GitHub 网页上手动点击运行按钮触发部署
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 拉取最新的代码
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. 准备 Node.js 运行环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. 安装依赖包并执行编译打包
+      - name: Install Dependencies & Build App
+        run: |
+          npm ci
+          npm run build
+
+      # 4. 部署编译产物到腾讯云服务器 (175.24.200.26)
+      # 我们将打包好的 dist 目录、package.json、package-lock.json 安全拷贝到服务器中
+      - name: Copy Files to Tencent Cloud via SSH/SFTP
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.TENCENT_SSH_KEY }} # 推荐使用 SSH 密钥，如果用密码则配置密码
+          REMOTE_HOST: ${{ secrets.TENCENT_HOST }}
+          REMOTE_USER: ${{ secrets.TENCENT_USER }}
+          TARGET: /home/ubuntu/harry-outbound
+          SOURCE: "dist package.json package-lock.json"
+          EXCLUDE: "/node_modules/"
+
+      # 5. 在腾讯云服务器上执行依赖安装与 PM2 服务平滑重启
+      - name: Post-deploy Server Restart via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.TENCENT_HOST }}
+          username: ${{ secrets.TENCENT_USER }}
+          key: ${{ secrets.TENCENT_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/harry-outbound
+            # 安装生产环境依赖，避免装入开发包，大大加快安装速度
+            npm install --omit=dev
+            
+            # 使用 PM2 守护进程进行平滑重启，并显式指定 NODE_ENV=production 以及更新环境变量
+            # 首次启动可以使用 pm2 start dist/server.cjs --name "harry-outbound"
+            # 后续部署通过 reload 实现零停机平滑更新
+            NODE_ENV=production pm2 reload harry-outbound --update-env || NODE_ENV=production pm2 start dist/server.cjs --name "harry-outbound"
+            
+            # 保存 PM2 进程状态，确保开机自启生效
+            pm2 save
