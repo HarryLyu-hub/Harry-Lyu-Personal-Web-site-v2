@@ -130,7 +130,7 @@ export const t: { zh: TranslationMap; en: TranslationMap } = {
     isRegistered: "终身研学护航会员(VIP)",
     anonymousMode: "无痕访客模式",
     
-    tabAbout: "关于吕华@Test",
+    tabAbout: "关于吕华",
     tabBook: "书籍专著",
     tabVideos: "学员视频课件",
     tabWorkshops: "培训中心",
