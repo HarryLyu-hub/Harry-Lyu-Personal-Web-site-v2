@@ -41,7 +41,7 @@ export interface TranslationMap {
   aboutShowcaseSub: string;
   keynoteTopic: string;
   keynoteKeyPoints: string;
-  keynotes: { title: string; desc: string; takeaway: string }[];
+  keynotes: { title: string; desc: string; takeaway: string; image?: string }[];
   awardsTitle: string;
   awardsList: string[];
 
@@ -144,31 +144,46 @@ export const t: { zh: TranslationMap; en: TranslationMap } = {
 
     aboutTitle: "出海服务专家",
     aboutSubtitle: "跨文化敏捷组织学、大B端战略整合与核心CX(客户体验)专家",
-    trainerSubtitle: "实战派服务出海专家，引领多个头部企业客户体验系统全球落地，涉及新能源，手机，互联网金融以及家电等热点出海行业",
-    aboutBioPara1: "吕华(Harry Lyu) ，计算机应用专业，毕业于西安电子科技大学。现任国内头部出海跨国运营商NXAI（牛信云）公司副总裁，印尼呼叫中心协会（ICCA）国际评委，著有《出海制胜：六步打造卓越客户体验》等行业专著，担任CCSO认证讲师以及《客户观察》副主编。",
-    aboutBioPara2: "作为拥有20年呼叫中心与全球客户体验管理经验的资深专家，他曾长期服务于世界500强企业NTT（7年）及AVAYA（13年），历任跨国运营商客户体验与员工体验部总监、大中华区专业服务部总监等核心要职。他自2017年起致力于中企海外客服中心的全球化建设，从全球视角融合多年跨国经历、整合全球资源，主导了汽车制造、智能硬件、跨境零售及金融科技等领域多家头部机构的出海通讯与客户服务架构。他坚持“诚信、专注、创新”理念，帮助出海企业实现全球布局、技术赋能与持续优化，为迈向全球化的从业者输出极具实操价值的策略与方法论。",
+    trainerSubtitle: "《出海制胜》作者 · 20年世界500强与实战派服务出海高管，引领多家头部企业客户体验系统全球落地",
+    aboutBioPara1: "吕华(Harry Lyu)，《出海制胜：六步打造卓越客户体验》等跨国管理行业专著作者，资深出海服务与跨文化管理专家，印尼国家呼叫中心协会（ICCA）国际常任评委，CCSO认证讲师及《客户观察》副主编。毕业于西安电子科技大学计算机应用专业。",
+    aboutBioPara2: "作为拥有 20 年呼叫中心与全球客户体验 (CX) 管理经验的资深专家，他曾长期深耕世界 500 强外企日本 NTT（7年）与美国 AVAYA（13年），并曾任国内知名出海跨国运营商 NXAI（牛信云）副总裁、客户体验与员工体验部总监、大中华区专业服务部总监等核心要职。自 2017 年起致力于中企海外客服中心与全球化交付体系建设，主导了汽车制造、智能硬件、跨境零售及金融科技等领域多家头部机构的出海通讯与跨文化协作架构。他坚持“诚信、专注、创新”理念，为出海企业实现全球布局、本地化落地与管理破局提供极具实操价值的策略与方法论。",
     tagNegotiator: "国际文化谈判专家",
     tagCXCoach: "全球体验(CX)重塑督导",
     tagKeynote: "顶级大会 Keynote 演讲人",
-    aboutShowcase: "顶级峰会参与和分享",
-    aboutShowcaseSub: "Harry 常驻大会的热门授课主题与核心课件结构，点击主题预览要点",
+    aboutShowcase: "近期峰会与分享",
+    aboutShowcaseSub: "Harry 参与的近期行业峰会主旨演讲、圆桌研讨与新书巡回实录，点击主题预览要点",
     keynoteTopic: "主题",
     keynoteKeyPoints: "核心大纲与课程交付亮点",
     keynotes: [
       {
+        title: "数智领航 服务向新 | 2026.7（第三届·广州）制造行业服务创新论坛",
+        desc: "吕华先生受邀出席2026年第三届广州制造行业服务创新论坛，围绕中企出海 CX 体系重构与合规降本发表深度洞见：\n\n1. 国内 vs 出海 AI CX 部署差异：国内已进入 2.0 阶段（1 坐席管理 20+ 机器人、混合负载与拟人化语音）；而出海首要任务是打通 ASR-LLM-TTS 链路工程与低延迟网络。没有万能的 AI 架构，必须根据物理节点距离（如东盟就近选昆明节点或混合大模型链路）构建工程本地化“AI 实战地图”。\n\n2. 出海合规与降本的平衡：以某中国新能源两轮车欧洲出海为例，通过业务流审计将 25% 无 PII 售前咨询依托 CCaaS 智能路由与 SCCs 协议合规迁移至马来西亚混合交付中心，在 100% 满足 GDPR 合规前提下实现 OPEX 降低 17%（年节省 23.4 万美元+）。",
+        takeaway: "出海 AI 成功不靠盲目堆砌通用模型，而靠低延迟物理节点与合规业务流精算剪裁；合规不是成本负担，深度流程审计反能释放巨大降本空间。",
+        image: "/src/assets/images/summit_guangzhou_2026.jpg"
+      },
+      {
+        title: "2026.7 | 《出海制胜：六步打造卓越客户体验》北京、上海、深圳新书分享会",
+        desc: "2026年7月，由吕华老师撰写的行业权威专著《出海制胜：六步打造卓越客户体验》全国三地（北京、上海、深圳）新书分享会圆满落幕（新浪官方新闻深度报道）：\n\n本次分享会聚焦中国企业全球化浪潮中“走出去、融进去、走得远”的深层挑战。吕华老师携手多位跨国企业高管与出海专家，系统拆解“合规风控、本地服务生态、多语言团队搭建、跨文化敏捷协作、全球 CX 指标体系”六大实操抓手，为制造、新能源、智能硬件及跨境科技企业带来极具实操价值的出海作战指南。",
+        takeaway: "中企出海从“产品输出”走向“体验扎根”，真正的全球化竞争力是构建超越文化断层线的本地化卓越服务生态。",
+        image: "/src/assets/images/book_tour_2026.jpg"
+      },
+      {
         title: "GITEX Asia 分享和交流",
-        desc: "吕华先生作为NXAI（NXLink）全球GTM副总裁赴新加坡出席2026年GITEX Asia亚洲科技博览会。针对如何使用智能客服大模型打通南亚、中东和欧洲业务展开高规格深度解析，为30余家客商与跨国中外企业现场分享。文字可基于AI文本做深度特色洞见总结！",
-        takeaway: "AI时代的全球化不仅是系统出海，更是借敏捷大模型重构异层文化用户的无延迟沟通。打字无声、AI辅助是精算本地化性价比的王道利器。"
+        desc: "吕华先生作为知名出海专家、曾任NXAI全球GTM副总裁赴新加坡出席2026年GITEX Asia亚洲科技博览会。针对如何使用智能客服大模型打通南亚、中东和欧洲业务展开高规格深度解析，为30余家客商与跨国中外企业现场分享。文字可基于AI文本做深度特色洞见总结！",
+        takeaway: "AI时代的全球化不仅是系统出海，更是借敏捷大模型重构异层文化用户的无延迟沟通。打字无声、AI辅助是精算本地化性价比的王道利器。",
+        image: "/src/assets/images/keynote_singapore_1781853262378.jpg"
       },
       {
         title: "印尼ICCA 年度客户体验创新国际评审",
         desc: "吕华担任2025、2026年印尼国家呼叫中心协会（ICCA）年度大奖国际常任评委，并在峰会发表主旨演讲。深度揭露东南亚地区因强烈的面子妥协文化带来的“微笑隐瞒、报喜不抱忧”管理盲区，并传授智能情感词云监测体系在业务合规风险及催收等场景中的破壁实操。",
-        takeaway: "绝不动用低语境的字面白字去僵化理解高语境印尼子公司的汇报进度。巧借AI情感检测工具，才能打破长链微笑黑盒。"
+        takeaway: "绝不动用低语境的字面白字去僵化理解高语境印尼子公司的汇报进度。巧借AI情感检测工具，才能打破长链微笑黑盒。",
+        image: "/src/assets/images/keynote_indonesia_1781853281712.jpg"
       },
       {
         title: "《第九届中国客户服务节全球化论坛：出海扬帆智能化，社媒巧织客情网》",
         desc: "在2025年全球化浪潮下的跨境服务新机遇主题论坛上，吕华先生全面剖析了中企出海重组全渠道客户体验中枢（CX Hub）的黄金配比。系统展示如何精妙编排社媒（WhatsApp等）流量通道并深度融合数字化，使中企摆脱纯体力的人头呼叫成本陷阱。",
-        takeaway: "数字社交及AI多渠道时代的海外客户体验绝非单纯成本耗散中心，而是流量资产二次裂变的重要触点。精心编排每一来话，皆是曝光与信任的绝佳契机。"
+        takeaway: "数字社交及AI多渠道时代的海外客户体验绝非单纯成本耗散中心，而是流量资产二次裂变的重要触点。精心编排每一来话，皆是曝光与信任的绝佳契机。",
+        image: "/src/assets/images/keynote_crossborder_1781853295706.jpg"
       }
     ],
     awardsTitle: "国际裁判经历、学术荣誉与行业影响力资质",
@@ -290,31 +305,46 @@ export const t: { zh: TranslationMap; en: TranslationMap } = {
 
     aboutTitle: "Global Outbound Service Expert",
     aboutSubtitle: "Expert in Cross-Cultural Agile Organizations, Enterprise Architecture Alignment, and Customer Experience (CX)",
-    trainerSubtitle: "Hands-on global expansion service expert, leading global CX system deployment for multiple industry leaders across hot sectors: new energy, mobile, fintech, and smart home appliances.",
-    aboutBioPara1: "Harry Lyu, majoring in Computer Applications from Xidian University, currently serves as Vice President of NXAI, a leading multinational outbound operator, and an international judge for the Indonesian Cloud Contact Center Association (ICCA). Author of 'Winning Overseas: Six Steps to Build an Outstanding Customer Experience', Harry is a 20-year veteran in contact centers and global customer experience (CX) management. He spent 7 years at Fortune 500 NTT and 13 years at AVAYA respectively, serving in key executive roles including Director of CX & EX and Greater China Professional Services Director.",
-    aboutBioPara2: "An accredited CCSO instructor and Deputy Editor of the 'Customer Observation' journal, Harry has dedicated himself since 2017 to the global capacity building of outbound customer service centers for Chinese enterprises. He possesses extensive practical experience orchestrating overseas communications and service frameworks for leading automotive manufacturers, smartphone brands, and fintech giants. Driven by details and strategic alignment, Harry assists globalizing businesses in deep analysis, local compliance, and technological innovation to guide robust outbound growth.",
+    trainerSubtitle: "Author of 'Winning Overseas' · 20-Year Fortune 500 & Global Expansion Executive, Leading International CX System Deployments",
+    aboutBioPara1: "Harry Lyu is the Author of 'Winning Overseas: Six Steps to Build an Outstanding Customer Experience', a seasoned Global CX & Cross-Cultural Management Expert, an International Permanent Judge for the Indonesian Cloud Contact Center Association (ICCA), certified CCSO Senior Instructor, and Deputy Editor-in-Chief of 'Customer Observation'. He graduated from Xidian University with a degree in Computer Applications.",
+    aboutBioPara2: "With 20 years of hands-on leadership across global customer experience (CX), international contact centers, and professional telecom services, Harry spent 7 years at Fortune 500 NTT and 13 years at AVAYA. He formerly served as Vice President of NXAI, Director of CX & EX, and Greater China Professional Services Director. Since 2017, he has dedicated himself to Chinese enterprise globalization, orchestrating overseas service and cross-cultural communication architectures for leading brands in automotive manufacturing, smart hardware, global e-commerce, and fintech.",
     tagNegotiator: "Intl Cultural Negotiator",
     tagCXCoach: "Global CX Redesign Consultant",
     tagKeynote: "Top-Tier Conference Keynote",
-    aboutShowcase: "Keynote Speeches & Lecture Slides",
-    aboutShowcaseSub: "Harry's most requested training seminars and presentation structures. Click to inspect core takeaways.",
+    aboutShowcase: "Recent Summits & Keynote Sharing",
+    aboutShowcaseSub: "Harry's recent keynote speeches, roundtables, and nationwide book sharing tours. Click to inspect core takeaways.",
     keynoteTopic: "Seminar Topic",
     keynoteKeyPoints: "Syllabus Structure & High-End Takeaways",
     keynotes: [
       {
+        title: "Digital Intelligence & Service Innovation | The 3rd Guangzhou Manufacturing Service Innovation Summit (2026.7)",
+        desc: "Harry Lyu attended the 3rd Guangzhou Manufacturing Service Innovation Summit 2026, delivering high-impact takeaways on outbound CX architecture and compliant cost reduction:\n\n1. Domestic vs Global AI CX Deployment: China's CX AI is in Phase 2.0 (1 agent supervising 20+ bots, hybrid workload balancing, human-like voice synthesis). Overseas expansion prioritizes foundational engineering across the ASR-LLM-TTS pipeline and network latency over raw model intelligence. Success relies on building an 'AI Practice Map' tailored to physical inference node proximity.\n\n2. Balancing Compliance & Cost in Global Expansion: For a Chinese EV/mobility brand expanding into Europe, workflow auditing revealed 25% of inquiries were zero-PII pre-sales traffic. Migrating this traffic via global CCaaS and Standard Contractual Clauses (SCCs) to a Malaysian hybrid center reduced annual OPEX by 17% ($234k+ savings) with zero GDPR compliance risk.",
+        takeaway: "Outbound AI success is determined by localized engineering and low-latency physical nodes rather than generic models. Strict compliance is an opportunity for workflow optimization that unlocks massive cost savings.",
+        image: "/src/assets/images/summit_guangzhou_2026.jpg"
+      },
+      {
+        title: "2026.7 | 'Winning Overseas' Nationwide Book Sharing Tour (Beijing, Shanghai, Shenzhen)",
+        desc: "In July 2026, Harry Lyu's authoritative monograph 'Winning Overseas: Six Steps to Build an Outstanding Customer Experience' completed its nationwide tour across Beijing, Shanghai, and Shenzhen (featured in official Sina News):\n\nCovering critical challenges of 'going global, integrating locally, and thriving long-term', Harry joined cross-border executives to outline the 6-step practical roadmap: compliance risk control, localized service ecosystems, multilingual talent architecture, cross-cultural agile synergy, and global CX metrics.",
+        takeaway: "Chinese enterprises must evolve from 'product export' to 'deep experiential rooting'. The true sustainable moat lies in building localized service excellence across cultural faultlines.",
+        image: "/src/assets/images/book_tour_2026.jpg"
+      },
+      {
         title: "From Singapore to the World: Agile Re-Architecting of Global Customer Experience (CX) with Large AI Models",
-        desc: "Harry Lyu attended GITEX Asia 2026 in Singapore as the global Vice President of NXAI, demonstrating how innovative intelligence communication frameworks seamlessly resolve structural CX frictions for multi-national players across Southeast Asia, Europe, and Africa.",
-        takeaway: "AI-driven globalization is not just deploying software; it's using intelligent machinery to establish frictionless connections with local users."
+        desc: "Harry Lyu attended GITEX Asia 2026 in Singapore as a renowned global expansion expert and former Vice President of NXAI, demonstrating how innovative intelligence communication frameworks seamlessly resolve structural CX frictions for multi-national players across Southeast Asia, Europe, and Africa.",
+        takeaway: "AI-driven globalization is not just deploying software; it's using intelligent machinery to establish frictionless connections with local users.",
+        image: "/src/assets/images/keynote_singapore_1781853262378.jpg"
       },
       {
         title: "Indonesia TBCCI National Summit: The Smile Blackbox & High-stakes AI Sentiment Monitoring",
         desc: "Serving as a permanent international judge for ICCA Indonesia (2025/2026) and a standout keynote speaker, Harry dissects why eastern high-context 'avoidance of conflict' gets mistranslated as a perfect progress report, while sharing real-world solutions through AI sentiment analysis.",
-        takeaway: "Never read high-context verbal agreements at face value. De-contextualize critical tracking data with AI models to resolve hidden multi-tier administrative friction."
+        takeaway: "Never read high-context verbal agreements at face value. De-contextualize critical tracking data with AI models to resolve hidden multi-tier administrative friction.",
+        image: "/src/assets/images/keynote_indonesia_1781853281712.jpg"
       },
       {
         title: "The 9th China Customer Service Festival: Outbound Journeys & Orchestrating Global Social Commerce Experience",
         desc: "At the 2025 Cross-Border Service Opportunities Forum, Harry dissected the golden allocation ratio of outbound contact centers, showing how to engineer high-velocity social-messaging (WhatsApp, etc.) pipelines to secure massive cost and retention advantages.",
-        takeaway: "Global customer service in the digital channel era is no longer a cost sink but a powerful secondary engine for traffic and organic virality."
+        takeaway: "Global customer service in the digital channel era is no longer a cost sink but a powerful secondary engine for traffic and organic virality.",
+        image: "/src/assets/images/keynote_crossborder_1781853295706.jpg"
       }
     ],
     awardsTitle: "International Credentials, Judging Roles & System Accreditations",

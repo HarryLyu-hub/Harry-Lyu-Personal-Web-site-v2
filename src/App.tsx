@@ -54,7 +54,8 @@ import {
   Quote,
   Calendar,
   Clock,
-  Send
+  Send,
+  ShieldCheck
 } from "lucide-react";
 import { DIMENSIONS, COUNTRIES, INITIAL_CASES, type Dimension, type CountryData, type CaseStudy } from "./data";
 const getCountryZh = (nameEn: string) => {
@@ -2925,8 +2926,8 @@ export default function App() {
               <h1 className="text-xs sm:text-base font-black tracking-tight text-white flex items-center gap-1 sm:gap-2 whitespace-nowrap">
                 <span className="shrink-0">{isEn ? "Harry Lyu" : "吕华"}</span>
                 <span className="text-[9px] sm:text-[10px] font-extrabold px-1.5 py-0.5 sm:px-2 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 whitespace-nowrap shrink-0">
-                  <span className="sm:hidden">{isEn ? "Advisor" : "跨国顾问"}</span>
-                  <span className="hidden sm:inline">{isEn ? "Global Executive Advisor" : "跨国企业顾问"}</span>
+                  <span className="sm:hidden">{isEn ? "CX Expert" : "出海专家"}</span>
+                  <span className="hidden sm:inline">{isEn ? "Global Outbound Service Expert" : "出海服务专家"}</span>
                 </span>
               </h1>
               <p className="text-[11px] text-slate-400 font-medium hidden md:block truncate">
@@ -3610,10 +3611,12 @@ export default function App() {
                     const safeIdx = selectedKeynoteIdx < activeKeynotes.length ? selectedKeynoteIdx : 0;
                     const keynote = activeKeynotes[safeIdx];
                     const keynoteImage = keynote.image || [
+                      "/src/assets/images/summit_guangzhou_2026.jpg",
+                      "/src/assets/images/book_tour_2026.jpg",
                       "/src/assets/images/keynote_singapore_1781853262378.jpg",
                       "/src/assets/images/keynote_indonesia_1781853281712.jpg",
                       "/src/assets/images/keynote_crossborder_1781853295706.jpg"
-                    ][safeIdx % 3];
+                    ][safeIdx % 5];
                     return (
                       <div className="lg:col-span-7 bg-slate-950 border border-slate-800 rounded-2xl p-6 relative flex flex-col justify-between overflow-hidden min-h-[300px]">
                         <div className="absolute right-0 bottom-0 translate-y-8 translate-x-8 opacity-5 pointer-events-none">
@@ -4945,169 +4948,178 @@ export default function App() {
                           
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {/* Chapter 1 */}
-                            <div id="chapter-card-1" className="p-4 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2 transition-all duration-300">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 01</span>
-                                <MapPin className="w-4 h-4 text-amber-400" />
+                            <div id="chapter-card-1" className="p-4.5 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 01</span>
+                                  <Globe className="w-4 h-4 text-amber-400" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn ? "1. Chinese Outbound Trends & Global Landscape" : "1. 中企出海趋势与全球格局"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Macro-overview of global economics and business environments in key outbound destinations. Analyze outbound service challenges, cultural frictions, and strategic values in trending global industries." 
+                                    : "宏观纵览全球经济新格局与主流出海目的地营商生态。深度剖析中企全球化在新能源、消费电子、跨境科技等赛道演进脉络，精准预判出海服务体系面临的文化摩擦、合规准入与交付韧性等战略挑战。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn ? "1. Where to Locate Offshore Customer Service?" : "1. 海外客服选址在哪里？"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed">
-                                {isEn 
-                                  ? "Decide locations based on sales destination, data privacy laws, operational cost, and customer experience." 
-                                  : "根据销售部确定的出海目的地，结合数据保护法规、人力及通信成本、客户体验来决定客服职场位置。"}
-                              </p>
-                              <div className="flex flex-wrap gap-1 pt-1">
-                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Compliance" : "合规"}
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "Global Mapping" : "全球营商图谱"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "NPS & Comfort" : "体验与舒适度"}
+                                  {isEn ? "Outbound Trends" : "出海经济剖析"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Cost-Optimal" : "成本最优"}
+                                  {isEn ? "Strategic Risk" : "战略风险预判"}
                                 </span>
                               </div>
                             </div>
                             
                             {/* Chapter 2 */}
-                            <div id="chapter-card-2" className="p-4 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2 transition-all duration-300">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 02</span>
-                                <Handshake className="w-4 h-4 text-amber-400" />
+                            <div id="chapter-card-2" className="p-4.5 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 02</span>
+                                  <ShieldCheck className="w-4 h-4 text-amber-400" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn ? "2. GDPR & Global Data Compliance Safeguards" : "2. GDPR 与全球数据合规护航"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Demystify EU GDPR and global privacy regulations. Build data compliance models across contact center workflows, combining real benchmark cases to turn compliance into a strategic corporate asset." 
+                                    : "破译欧盟 GDPR 等全球严苛的数据安全与隐私保护法网。从客服业务全流程构建数据安全与合规管理模型，结合标杆企业实战案例，打通合规流程审计与跨境数据传输机制，让合规成为出海核心底牌。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn ? "2. How to Collaborate with CBBO Partners" : "2. 如何有效与 CBBO 伙伴协作"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed">
-                                {isEn 
-                                  ? "Establish operational excellence, KPI alignment, and SLA governance using contact center standards." 
-                                  : "利用国内外呼叫中心行业标准进行 KPI 设定与运营管理，建立顺畅高效的多国跨境伙伴协同模式。"}
-                              </p>
-                              <div className="flex flex-wrap gap-1 pt-1">
-                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Inhouse vs BPO" : "自建与BPO"}
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "GDPR Deep Dive" : "GDPR深度解析"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "KPI Standards" : "管理标准"}
+                                  {isEn ? "Privacy Model" : "隐私合规模型"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Global Management" : "日常管理班子"}
+                                  {isEn ? "Case Studies" : "实战案例剖析"}
                                 </span>
                               </div>
                             </div>
                             
                             {/* Chapter 3 */}
-                            <div id="chapter-card-3" className="p-4 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2 transition-all duration-300">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 03</span>
-                                <Cloud className="w-4 h-4 text-amber-400" />
+                            <div id="chapter-card-3" className="p-4.5 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 03</span>
+                                  <MapPin className="w-4 h-4 text-amber-400" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn ? "3. Offshore Site Selection & Operations Planning" : "3. 海外客服职场选址与规划"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Unlock site selection golden triangle: compliance cost, talent pool, and CX. Compare domestic vs overseas operations, 'In-house vs BPO' decision models, and overseas team KPI governance." 
+                                    : "揭秘海外客服中心选址黄金三角：合规成本、人才供给与交付体验。深度对比国内外运营差异与“自建 vs BPO外包”决策模型，精细化拆解海外典型客服团队的考核指标（KPI）与跨国协作机制。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn ? "3. What to Use for CX Cloud?" : "3. CX Cloud 用什么？"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed">
-                                {isEn 
-                                  ? "Identify and evaluate global cloud contact center platforms to scale capabilities seamlessly." 
-                                  : "海外客服建设主流技术为云平台呼叫中心。具体根据企业全球业务特性，多维度考量、评估不同平台的技术实力与适配度。"}
-                              </p>
-                              <div className="flex flex-wrap gap-1 pt-1">
-                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Build vs Buy" : "自研或外采工作台"}
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "Site Selection" : "选址黄金三角"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Global Match" : "覆盖国家匹配"}
+                                  {isEn ? "Inhouse vs BPO" : "自建与外包决策"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Core vs Chat App" : "核心系统与店小二"}
+                                  {isEn ? "Global KPI" : "海外团队KPI标准"}
                                 </span>
                               </div>
                             </div>
                             
                             {/* Chapter 4 */}
-                            <div id="chapter-card-4" className="p-4 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2 transition-all duration-300">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 04</span>
-                                <Share2 className="w-4 h-4 text-amber-400" />
+                            <div id="chapter-card-4" className="p-4.5 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 04</span>
+                                  <Cloud className="w-4 h-4 text-amber-400" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn ? "4. Tech Architecture & CX Cloud Selection" : "4. 出海客服技术架构与云平台选型"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Build reliable global digital infrastructure. Evaluate global cloud contact center platforms, global dedicated networks, cloud infra, and local telecom voice resources for low latency." 
+                                    : "构筑稳定高效的全球化数字通信底座。全面评估主流海外云呼叫中心平台的技术实力与业务适配度，详解国际网络、云底座与本地语音资源的跨国架构组合，确保业务低延迟与高可用。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn ? "4. Which Communication Channels?" : "4. 什么渠道？"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed">
-                                {isEn 
-                                  ? "Support modern multi-channel social media via CX Cloud, tailoring selection to real demand." 
-                                  : "主流云客服平台虽通配多社媒，但需要根据企业自身真实的语音与即时通信业务需求，实施精准对攻与部署选型。"}
-                              </p>
-                              <div className="flex flex-wrap gap-1 pt-1">
-                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Inbound / Outbound Voice" : "语音交互（呼入/自动外呼）"}
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "CX Cloud" : "云呼叫中心选型"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Chat & Private Domain" : "Chat类交互与私域智能响应"}
+                                  {isEn ? "Cloud Infra" : "网络与云底座"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Tech Deceleration" : "理解技术降速"}
+                                  {isEn ? "Telecom Voice" : "本地语音资源"}
                                 </span>
                               </div>
                             </div>
                             
                             {/* Chapter 5 */}
-                            <div id="chapter-card-5" className="p-4 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2 transition-all duration-300">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 05</span>
-                                <Cpu className="w-4 h-4 text-amber-400" />
+                            <div id="chapter-card-5" className="p-4.5 bg-slate-950/65 border border-slate-850 hover:border-amber-500/30 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded-full">CHAPTER 05</span>
+                                  <Share2 className="w-4 h-4 text-amber-400" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn ? "5. AI & Global Social Media Channel Synergy" : "5. 海外 AI 与社媒多渠道融合实战"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Deconstruct global social channels like WhatsApp versus domestic ecosystems. Avoid generic AI pitfalls by aligning localized physical nodes and workflow tailoring for cost and quality." 
+                                    : "解锁海外 AI 与多渠道通信的破局之道。深度解构 WhatsApp 等国际主流社媒渠道与国内生态差异；摒弃盲目堆砌通用大模型参数的误区，依托物理节点测算与业务流精准剪裁，实现人机协同降本增效。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn ? "5. How to Leverage AI Effectively?" : "5. 怎么用 AI？"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed">
-                                {isEn 
-                                  ? "AI integration is not about if, but how and at what stage to build local confidence." 
-                                  : "用不用 AI 绝非二选一的摆设，如何把关人机交互质量、降本增效，并在适当阶段稳健、深度落地才是解题核心。"}
-                              </p>
-                              <div className="flex flex-wrap gap-1 pt-1">
-                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Ditch Aggressive Mindsets" : "避开战狼思维 & 对接Google/AWS"}
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "Social Channels" : "国际社媒矩阵"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Robotic vs Human POC" : "语言机械感 & 当地POC体验"}
+                                  {isEn ? "AI Model Fit" : "AI与大模型选型"}
                                 </span>
                                 <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
-                                  {isEn ? "Step-by-step Building" : "逐步平稳建设"}
+                                  {isEn ? "Cost Reduction" : "人机协同降本"}
                                 </span>
                               </div>
                             </div>
                             
                             {/* Chapter 6 */}
-                            <div id="chapter-card-6" className="p-4 bg-slate-950/65 border border-amber-500/30 hover:border-amber-500/50 rounded-2xl space-y-2 transition-all duration-300 col-span-1 md:col-span-2 lg:col-span-3">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/15 px-2 py-0.5 rounded-full">CHAPTER 06</span>
-                                <TrendingUp className="w-4 h-4 text-amber-400 animate-pulse" />
+                            <div id="chapter-card-6" className="p-4.5 bg-slate-950/65 border border-amber-500/30 hover:border-amber-500/50 rounded-2xl space-y-2.5 transition-all duration-300 flex flex-col justify-between">
+                              <div className="space-y-2">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[10px] font-mono text-amber-400 font-bold bg-amber-500/15 px-2 py-0.5 rounded-full">CHAPTER 06</span>
+                                  <Users className="w-4 h-4 text-amber-400 animate-pulse" />
+                                </div>
+                                <p className="text-xs text-white font-black leading-tight">
+                                  {isEn 
+                                    ? "6. Global Employee Experience (EX) Management" 
+                                    : "6. 海外员工体验管理"}
+                                </p>
+                                <p className="text-[11px] text-slate-350 leading-relaxed font-sans text-left">
+                                  {isEn 
+                                    ? "Deconstruct the core management philosophy that 'Employee Experience (EX) is the primary driver for Customer Experience (CX) growth'. Tackle heavy workloads, career path bottlenecks, and BPO cultural differences, mastering practical frameworks to reduce staff attrition rate." 
+                                    : "深入解密“员工体验是客户体验增长源动力”的运营哲学。直面中企海外团队工作负荷过重、职业发展受限、以及跨国团队文化差异三大现实挑战；重点传授海外客服核心指标——“员工流失率”的痛点归因与实战降低方案，打造自驱高效的海外服务团队。"}
+                                </p>
                               </div>
-                              <p className="text-xs text-white font-black leading-tight">
-                                {isEn 
-                                  ? "6. Employee Experience (EX) Drives Customer Experience (CX) & Corporate Profit" 
-                                  : "6. 员工体验（EX）驱动客户体验（CX）与企业利润"}
-                              </p>
-                              <p className="text-[11px] text-slate-400 leading-relaxed font-sans text-left">
-                                {isEn 
-                                  ? "Global best practices on how optimizing Employee Experience (EX) unlocks high-quality Customer Experience (CX), which ultimately and directly fuels business revenue and profit expansion based on the Service Profit Chain theory." 
-                                  : "吕华老师分享全球范围内的实操，深度拆解「服务利润链」理论在出海业务中的闭环落地。"}
-                              </p>
-                              <div className="p-2.5 bg-slate-950/80 border border-slate-850 rounded-xl mt-1.5 grid grid-cols-1 md:grid-cols-2 gap-2 text-[10.5px]">
-                                <div className="flex items-start gap-1.5">
-                                  <span className="p-0.5 bg-amber-500/10 text-amber-400 rounded text-[9px] font-mono mt-0.5 font-bold">1</span>
-                                  <p className="text-slate-300 leading-normal">
-                                    <strong>{isEn ? "EX leads to CX" : "员工体验提升"}</strong>：只有海外本地员工体验（EX）提升了，整个企业的客户体验（CX）才能真正随之质变提升。
-                                  </p>
-                                </div>
-                                <div className="flex items-start gap-1.5">
-                                  <span className="p-0.5 bg-amber-500/10 text-amber-400 rounded text-[9px] font-mono mt-0.5 font-bold">2</span>
-                                  <p className="text-slate-300 leading-normal">
-                                    <strong>{isEn ? "CX leads to Profit" : "CX 带来利润增加"}</strong>：而客户体验的提升，将直接帮助企业留存高客单用户、为企业直接带来长效的利润增加。
-                                  </p>
-                                </div>
+                              <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-900/60">
+                                <span className="text-[9px] bg-slate-900 text-amber-400/90 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "EX Fuels CX" : "员工体验驱动增长"}
+                                </span>
+                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "Reduce Attrition" : "降低流失率实战"}
+                                </span>
+                                <span className="text-[9px] bg-slate-900 text-slate-400 px-1.5 py-0.5 rounded font-mono">
+                                  {isEn ? "Cross-culture Synergy" : "跨国团队文化融合"}
+                                </span>
                               </div>
                             </div>
                           </div>
