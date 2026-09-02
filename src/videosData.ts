@@ -8,6 +8,7 @@ export interface VideoModule {
   caseCountryZh: string;
   caseCountryEn: string;
   tags: string[];
+  videoUrl?: string;
   pdfFile: string;
   isFree: boolean;
 }
@@ -15,14 +16,15 @@ export interface VideoModule {
 export const VIDEO_MODULES: VideoModule[] = [
   {
     id: "M01",
-    titleZh: "M01: 破题战略 · 从“中国速度”到“全球预期”的范式重置",
-    titleEn: "M01: Strategic Breakthrough - From China Speed to Global Expectations",
+    titleZh: "M01: 测试视频播放",
+    titleEn: "M01: Test Video Playback",
     descZh: "深入剖析出海起步阶段的核心痛点：如何将国内饱受赞誉的“极速执行”范式，与海外成熟、严苛的合规及多边相关方预期对位。以印尼雅万高铁为典型区域视角案例，探讨跨国大工程落地时，如何打破物理外溢的粗放思路，转入精细化跨国契约及信任对齐通道。",
     descEn: "Deeply analyze the core pain points of going global at inception: How to align the highly praised domestic 'extreme execution' paradigm with mature, rigorous global regulations and multi-stakeholder expectations. Anchored on the Indonesia JKT-BDG High-Speed Rail as a regional case study, explore how to transcend crude physical overflow and move into standard international contracts.",
     duration: "14:22",
     caseCountryZh: "印尼 / 新加坡",
     caseCountryEn: "Indonesia / Singapore",
     tags: ["破题战略", "雅万高铁", "区域视角", "范式重置"],
+    videoUrl: "https://github.com/HarryLyu-hub/Harry-Lyu-Personal-Web-site-v2/releases/download/videos-on-publish/M01.mp4",
     pdfFile: "/docs/M01.pdf",
     isFree: true
   },

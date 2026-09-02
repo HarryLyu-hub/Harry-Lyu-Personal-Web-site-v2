@@ -11217,99 +11217,115 @@ export default function App() {
             {/* Two Column Player Area */}
             <div className="flex-1 overflow-y-auto grid grid-cols-1 lg:grid-cols-12 gap-6 pr-1">
               
-              {/* Left Column: Simulated Cinematic Video Screen */}
+              {/* Left Column: Video Screen */}
               <div className="lg:col-span-7 flex flex-col justify-start space-y-4">
                 
-                <div className="w-full aspect-video bg-slate-950 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center border border-slate-800/80 shadow-inner group select-none">
-                  
-                  {/* Glowing dynamic pulse orbit */}
-                  <div className={`absolute w-36 h-36 border border-dashed border-amber-500/20 rounded-full flex items-center justify-center ${isPlayingMockVideo ? "animate-spin [animation-duration:15s]" : ""}`}>
-                    <div className="w-24 h-24 border border-slate-800/60 rounded-full" />
+                {selectedVideoToPlay.videoUrl ? (
+                  <div className="w-full aspect-video bg-black rounded-2xl relative overflow-hidden flex flex-col items-center justify-center border border-amber-500/40 shadow-2xl">
+                    <video
+                      key={selectedVideoToPlay.videoUrl}
+                      src={selectedVideoToPlay.videoUrl}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="w-full h-full object-contain rounded-2xl bg-black"
+                    >
+                      <source src={selectedVideoToPlay.videoUrl} type="video/mp4" />
+                      您的浏览器不支持 HTML5 视频播放。
+                    </video>
                   </div>
-
-                  {/* Lecturer portrait outline or active audio wave */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 space-y-2 text-center bg-radial from-slate-950 via-slate-950/80 to-slate-950">
-                    <Compass className={`w-12 h-12 text-amber-500/80 ${isPlayingMockVideo ? "animate-spin [animation-duration:12s]" : ""}`} />
+                ) : (
+                  <div className="w-full aspect-video bg-slate-950 rounded-2xl relative overflow-hidden flex flex-col items-center justify-center border border-slate-800/80 shadow-inner group select-none">
                     
-                    <div className="space-y-1">
-                      <p className="text-[10.5px] font-bold text-slate-300 tracking-wider font-mono uppercase">
-                        {isPlayingMockVideo ? (isEn ? "NOW STREAMING" : "正在极速点播传输") : (isEn ? "PAUSED" : "播放暂停中")}
-                      </p>
-                      <p className="text-[9px] text-slate-500 max-w-xs font-mono">
-                        {selectedVideoToPlay.pdfFile} @ 1080p 60fps | CDN Secured
-                      </p>
+                    {/* Glowing dynamic pulse orbit */}
+                    <div className={`absolute w-36 h-36 border border-dashed border-amber-500/20 rounded-full flex items-center justify-center ${isPlayingMockVideo ? "animate-spin [animation-duration:15s]" : ""}`}>
+                      <div className="w-24 h-24 border border-slate-800/60 rounded-full" />
                     </div>
 
-                    {/* Simple dynamic audio wave spectrum */}
-                    {isPlayingMockVideo && (
-                      <div className="flex items-end gap-1.5 h-6 mt-1">
-                        {[0.8, 0.4, 0.9, 0.5, 0.7, 0.3, 0.8, 0.5, 0.9, 0.4, 0.7].map((h, i) => (
-                          <motion.div
-                            key={i}
-                            className="w-1 bg-amber-500 rounded-full"
-                            animate={{ height: [`${h*100}%`, `${(1-h)*100}%`, `${h*100}%`] }}
-                            transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.1 }}
-                            style={{ height: `${h * 100}%` }}
-                          />
-                        ))}
+                    {/* Lecturer portrait outline or active audio wave */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 space-y-2 text-center bg-radial from-slate-950 via-slate-950/80 to-slate-950">
+                      <Compass className={`w-12 h-12 text-amber-500/80 ${isPlayingMockVideo ? "animate-spin [animation-duration:12s]" : ""}`} />
+                      
+                      <div className="space-y-1">
+                        <p className="text-[10.5px] font-bold text-slate-300 tracking-wider font-mono uppercase">
+                          {isPlayingMockVideo ? (isEn ? "NOW STREAMING" : "正在极速点播传输") : (isEn ? "PAUSED" : "播放暂停中")}
+                        </p>
+                        <p className="text-[9px] text-slate-500 max-w-xs font-mono">
+                          {selectedVideoToPlay.pdfFile} @ 1080p 60fps | CDN Secured
+                        </p>
                       </div>
-                    )}
-                  </div>
 
-                  {/* Top-left security stamp */}
-                  <div className="absolute top-3 left-3 z-20 bg-slate-950/80 backdrop-blur-xs border border-emerald-500/25 px-2 py-0.5 rounded text-[8px] text-emerald-400 font-mono flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
-                    <span>TRAINEE VIP STREAM ACTIVE</span>
-                  </div>
-
-                  {/* Bottom play bar overlay */}
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 to-transparent p-3 pt-8 z-20 flex flex-col gap-2">
-                    
-                    {/* Scrub bar */}
-                    <div className="flex items-center gap-2">
-                      <span className="text-[9px] font-mono text-slate-400">
-                        {(() => {
-                          const secs = Math.floor((mockVideoPlaybackProgress / 100) * 14 * 60 + 20);
-                          const m = Math.floor(secs / 60);
-                          const s = secs % 60;
-                          return `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
-                        })()}
-                      </span>
-                      <div 
-                        onClick={(e) => {
-                          const rect = e.currentTarget.getBoundingClientRect();
-                          const percent = Math.floor(((e.clientX - rect.left) / rect.width) * 100);
-                          setMockVideoPlaybackProgress(percent);
-                        }}
-                        className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden cursor-pointer relative group/scrub"
-                      >
-                        <div className="absolute inset-y-0 left-0 bg-amber-500 rounded-full" style={{ width: `${mockVideoPlaybackProgress}%` }} />
-                      </div>
-                      <span className="text-[9px] font-mono text-slate-500">{selectedVideoToPlay.duration}</span>
+                      {/* Simple dynamic audio wave spectrum */}
+                      {isPlayingMockVideo && (
+                        <div className="flex items-end gap-1.5 h-6 mt-1">
+                          {[0.8, 0.4, 0.9, 0.5, 0.7, 0.3, 0.8, 0.5, 0.9, 0.4, 0.7].map((h, i) => (
+                            <motion.div
+                              key={i}
+                              className="w-1 bg-amber-500 rounded-full"
+                              animate={{ height: [`${h*100}%`, `${(1-h)*100}%`, `${h*100}%`] }}
+                              transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.1 }}
+                              style={{ height: `${h * 100}%` }}
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
 
-                    {/* Controls row */}
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-3">
-                        <button
-                          onClick={() => setIsPlayingMockVideo(!isPlayingMockVideo)}
-                          className="text-slate-300 hover:text-white transition-colors bg-transparent border-none outline-none cursor-pointer"
+                    {/* Top-left security stamp */}
+                    <div className="absolute top-3 left-3 z-20 bg-slate-950/80 backdrop-blur-xs border border-emerald-500/25 px-2 py-0.5 rounded text-[8px] text-emerald-400 font-mono flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping" />
+                      <span>TRAINEE VIP STREAM ACTIVE</span>
+                    </div>
+
+                    {/* Bottom play bar overlay */}
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 to-transparent p-3 pt-8 z-20 flex flex-col gap-2">
+                      
+                      {/* Scrub bar */}
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] font-mono text-slate-400">
+                          {(() => {
+                            const secs = Math.floor((mockVideoPlaybackProgress / 100) * 14 * 60 + 20);
+                            const m = Math.floor(secs / 60);
+                            const s = secs % 60;
+                            return `${m < 10 ? '0' + m : m}:${s < 10 ? '0' + s : s}`;
+                          })()}
+                        </span>
+                        <div 
+                          onClick={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const percent = Math.floor(((e.clientX - rect.left) / rect.width) * 100);
+                            setMockVideoPlaybackProgress(percent);
+                          }}
+                          className="flex-1 h-1.5 bg-slate-800 rounded-full overflow-hidden cursor-pointer relative group/scrub"
                         >
-                          {isPlayingMockVideo ? <Pause className="w-4 h-4 text-amber-500" /> : <Play className="w-4 h-4 text-amber-500" />}
-                        </button>
-
-                        <span className="text-[10px] text-slate-400 font-bold">1.0x (Speed)</span>
+                          <div className="absolute inset-y-0 left-0 bg-amber-500 rounded-full" style={{ width: `${mockVideoPlaybackProgress}%` }} />
+                        </div>
+                        <span className="text-[9px] font-mono text-slate-500">{selectedVideoToPlay.duration}</span>
                       </div>
 
-                      <div className="text-[10px] text-slate-400 font-bold flex items-center gap-1.5">
-                        <span>🔊 100%</span>
-                        <span className="bg-slate-800 text-[8px] font-mono font-bold text-slate-400 px-1 py-0.5 rounded">HD</span>
+                      {/* Controls row */}
+                      <div className="flex justify-between items-center">
+                        <div className="flex items-center gap-3">
+                          <button
+                            onClick={() => setIsPlayingMockVideo(!isPlayingMockVideo)}
+                            className="text-slate-300 hover:text-white transition-colors bg-transparent border-none outline-none cursor-pointer"
+                          >
+                            {isPlayingMockVideo ? <Pause className="w-4 h-4 text-amber-500" /> : <Play className="w-4 h-4 text-amber-500" />}
+                          </button>
+
+                          <span className="text-[10px] text-slate-400 font-bold">1.0x (Speed)</span>
+                        </div>
+
+                        <div className="text-[10px] text-slate-400 font-bold flex items-center gap-1.5">
+                          <span>🔊 100%</span>
+                          <span className="bg-slate-800 text-[8px] font-mono font-bold text-slate-400 px-1 py-0.5 rounded">HD</span>
+                        </div>
                       </div>
+
                     </div>
 
                   </div>
-
-                </div>
+                )}
 
                 {/* Case briefing box */}
                 <div className="p-4 bg-slate-900 border border-slate-800 rounded-2xl text-xs space-y-2">
